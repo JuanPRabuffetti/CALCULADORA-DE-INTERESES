@@ -8,20 +8,26 @@
 </head>
 <body>
     <h1>Calculadora de Intereses de Cheques</h1>
+
+    <div>
+        <label>Tasa de interés (%):</label>
+        <input type="number" id="tasaInteresGlobal" placeholder="Tasa de interés">
+    </div>
+
     <div id="chequesContainer">
         <div class="cheque">
             <label>Monto del cheque:</label>
             <input type="number" class="montoCheque" placeholder="Monto">
-            <label>Tasa de interés (%):</label>
-            <input type="number" class="tasaInteres" placeholder="Tasa de interés">
             <label>Fecha del préstamo:</label>
             <input type="date" class="fechaPrestamo">
             <label>Fecha de vencimiento:</label>
             <input type="date" class="fechaVencimiento">
         </div>
     </div>
+
     <button onclick="agregarCheque()">Agregar otro cheque</button>
     <button onclick="calcularIntereses()">Calcular Intereses</button>
+
     <div id="resultado"></div>
 
 <br>
