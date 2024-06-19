@@ -1,31 +1,45 @@
-function calcularInteres() {
-    alert("a")
-    // Obtener valores del usuario
-    let montoCheque = parseFloat(prompt("Ingrese el monto del cheque:"));
-    let tasaInteres = parseFloat(prompt("Ingrese la tasa de interés (en porcentaje):"));
-    let fechaPrestamo = prompt("Ingrese la fecha del préstamo (YYYY-MM-DD):");
-    let fechaVencimiento = prompt("Ingrese la fecha de vencimiento (YYYY-MM-DD):");
+function agregarCheque() {
+    let chequesContainer = document.getElementById('chequesContainer');
+    let nuevoCheque = document.createElement('div');
+    nuevoCheque.classList.add('cheque');
+    nuevoCheque.innerHTML = `
+        <label>Monto del cheque:</label>
+        <input type="number" class="montoCheque" placeholder="Monto">
+        <label>Tasa de interés (%):</label>
+        <input type="number" class="tasaInteres" placeholder="Tasa de interés">
+        <label>Fecha del préstamo:</label>
+        <input type="date" class="fechaPrestamo">
+        <label>Fecha de vencimiento:</label>
+        <input type="date" class="fechaVencimiento">
+    `;
+    chequesContainer.appendChild(nuevoCheque);
+}
 
-    // Validar que los valores sean correctos
-    if (isNaN(montoCheque) || isNaN(tasaInteres) || !fechaPrestamo || !fechaVencimiento) {
-        alert("Por favor, ingrese valores válidos.");
-        return;
+function calcularIntereses() {
+    let cheques = document.getElementsByClassName('cheque');
+    let totalInteres = 0;
+
+    for (let cheque of cheques) {
+        let montoCheque = parseFloat(cheque.querySelector('.montoCheque').value);
+        let tasaInteres = parseFloat(cheque.querySelector('.tasaInteres').value);
+        let fechaPrestamo = cheque.querySelector('.fechaPrestamo').value;
+        let fechaVencimiento = cheque.querySelector('.fechaVencimiento').value;
+
+        if (isNaN(montoCheque) || isNaN(tasaInteres) || !fechaPrestamo || !fechaVencimiento) {
+            alert("Por favor, ingrese valores válidos en todos los campos.");
+            return;
+        }
+
+        let fechaInicio = new Date(fechaPrestamo);
+        let fechaFin = new Date(fechaVencimiento);
+        let diferenciaEnMilisegundos = fechaFin - fechaInicio;
+        let dias = Math.ceil(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
+
+        dias = dias < 15 ? 15 : dias;
+        let interes = (montoCheque * (tasaInteres / 100)) / 30 * dias;
+
+        totalInteres += interes;
     }
 
-    // Convertir las fechas a objetos Date
-    let fechaInicio = new Date(fechaPrestamo);
-    let fechaFin = new Date(fechaVencimiento);
-
-    // Calcular la diferencia en días
-    let diferenciaEnMilisegundos = fechaFin - fechaInicio;
-    let dias = Math.ceil(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24)); // Convertir de milisegundos a días
-
-    // Aplicar la regla de interés mínimo de 15 días
-    dias = dias < 15 ? 15 : dias;
-
-    // Calcular el interés
-    let interes = (montoCheque * (tasaInteres / 100)) / 30 * dias;
-
-    // Mostrar el resultado
-    alert("El interés calculado es: $" + interes.toFixed(2));
+    document.getElementById('resultado').innerText = "El interés total calculado es: $" + totalInteres.toFixed(2);
 }
