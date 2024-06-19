@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="code.js"></script>
+</head>
+<body>
+    <h1>Calculadora de Intereses de Cheques</h1>
+    <div id="chequesContainer">
+        <div class="cheque">
+            <label>Monto del cheque:</label>
+            <input type="number" class="montoCheque" placeholder="Monto">
+            <label>Tasa de interés (%):</label>
+            <input type="number" class="tasaInteres" placeholder="Tasa de interés">
+            <label>Fecha del préstamo:</label>
+            <input type="date" class="fechaPrestamo">
+            <label>Fecha de vencimiento:</label>
+            <input type="date" class="fechaVencimiento">
+        </div>
+    </div>
+    <button onclick="agregarCheque()">Agregar otro cheque</button>
+    <button onclick="calcularIntereses()">Calcular Intereses</button>
+    <div id="resultado"></div>
+
+<br>
+</body>
+</html>
