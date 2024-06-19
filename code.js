@@ -1,4 +1,5 @@
 function calcularInteres() {
+    alert("a")
     // Obtener valores del usuario
     let montoCheque = parseFloat(prompt("Ingrese el monto del cheque:"));
     let tasaInteres = parseFloat(prompt("Ingrese la tasa de interés (en porcentaje):"));
