@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #333;
+}
+
+div {
+    padding: 10px;
+    margin: 0 10px;
+}
+
+/* Estilo del contenedor principal */
+#formularioCheque, #chequesIngresados, #resultado {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+/* Inputs y Labels */
+label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+input[type="number"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Botones */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004085;
+}
+
+/* Estilos para los cheques ingresados */
+.cheque {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-left: 5px solid #007bff;
+}
+
+.cheque p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 600px) {
+    h1, h3 {
+        font-size: 1.4rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    label, input, p {
+        font-size: 1rem;
+    }
+}

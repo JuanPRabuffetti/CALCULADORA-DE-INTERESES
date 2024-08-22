@@ -6,18 +6,19 @@
     <title>Document</title>
     <script src="./code.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
     <h1>Calculadora de Intereses de Cheques</h1>
 
-    <div>
+    <div class="Tasainteres">
         <label>Tasa de interés (%):</label>
         <input type="number" id="tasaInteresGlobal" placeholder="Tasa de interés">
     </div>
 
     <!-- Contenedor para ingresar un nuevo cheque -->
-    <div id="formularioCheque">
+    <div id="formularioCheque" class="formularioCheque">
         <h3>Agregar un nuevo cheque</h3>
         <label>Monto del cheque:</label>
         <input type="number" id="montoCheque" placeholder="Monto">
