@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./code.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 <body>
     <h1>Calculadora de Intereses de Cheques</h1>
@@ -14,22 +16,30 @@
         <input type="number" id="tasaInteresGlobal" placeholder="Tasa de interés">
     </div>
 
-    <div id="chequesContainer">
-        <div class="cheque">
-            <label>Monto del cheque:</label>
-            <input type="number" class="montoCheque" placeholder="Monto">
-            <label>Fecha del préstamo:</label>
-            <input type="date" class="fechaPrestamo">
-            <label>Fecha de vencimiento:</label>
-            <input type="date" class="fechaVencimiento">
-        </div>
+    <!-- Contenedor para ingresar un nuevo cheque -->
+    <div id="formularioCheque">
+        <h3>Agregar un nuevo cheque</h3>
+        <label>Monto del cheque:</label>
+        <input type="number" id="montoCheque" placeholder="Monto">
+        <br>
+        <label>Fecha del préstamo:</label>
+        <input type="date" id="fechaPrestamo">
+        <br>
+        <label>Fecha de vencimiento:</label>
+        <input type="date" id="fechaVencimiento">
+        <br>
+        <button onclick="agregarCheque()">Agregar Cheque</button>
     </div>
 
-    <button onclick="agregarCheque()">Agregar otro cheque</button>
+    <!-- Contenedor para mostrar los cheques ingresados -->
+    <h3>Lista de cheques ingresados</h3>
+    <div id="chequesIngresados"></div>
+
     <button onclick="calcularIntereses()">Calcular Intereses</button>
+    <button onclick="generarPDF()">Descargar Lista de Cheques en PDF</button>
 
     <div id="resultado"></div>
 
-<br>
+
 </body>
 </html>
