@@ -12,10 +12,7 @@
 <body>
     <h1>Calculadora de Intereses de Cheques</h1>
 
-    <div class="Tasainteres">
-        <label>Tasa de interés (%):</label>
-        <input type="number" id="tasaInteresGlobal" placeholder="Tasa de interés">
-    </div>
+        
 
     <!-- Contenedor para ingresar un nuevo cheque -->
     <div id="formularioCheque" class="formularioCheque">
@@ -26,18 +23,19 @@
         <label>Fecha del préstamo:</label>
         <input type="date" id="fechaPrestamo">
         <br>
+        <label>Tasa de interés (%):</label>
+        <input type="number" id="tasaInteresGlobal" placeholder="Tasa de interés">
+        <br>
         <label>Fecha de vencimiento:</label>
         <input type="date" id="fechaVencimiento">
         <br>
-        <button onclick="agregarCheque()">Agregar Cheque</button>
     </div>
 
     <!-- Contenedor para mostrar los cheques ingresados -->
-    <h3>Lista de cheques ingresados</h3>
-    <div id="chequesIngresados"></div>
+
 
     <button onclick="calcularIntereses()">Calcular Intereses</button>
-    <button onclick="generarPDF()">Descargar Lista de Cheques en PDF</button>
+    <button onclick="generarPDF()">Descargar PDF</button>
 
     <div id="resultado"></div>
 
